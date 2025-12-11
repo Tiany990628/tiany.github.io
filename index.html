@@ -10,7 +10,7 @@
     <style>
         :root {
             --primary-color: #00ff88; /* 螢光綠 (MC風格) */
-            --accent-color: #7000ff; /* 賽博龐克紫 */
+            --accent-color: #7289DA; /* Discord 藍 */
             --bg-dark: #0f1014;
             --glass-bg: rgba(255, 255, 255, 0.05);
             --glass-border: rgba(255, 255, 255, 0.1);
@@ -107,9 +107,10 @@
             width: 100%;
         }
 
+        /* 導航欄上的 CTA 按鈕 (Discord) */
         .cta-btn {
             padding: 0.6rem 1.5rem;
-            background: linear-gradient(45deg, var(--accent-color), #4c00b0);
+            background: var(--accent-color); 
             border-radius: 50px;
             color: white;
             text-decoration: none;
@@ -119,7 +120,7 @@
 
         .cta-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(112, 0, 255, 0.4);
+            box-shadow: 0 5px 15px rgba(114, 137, 218, 0.4);
         }
 
         /* Hero 區域 */
@@ -132,8 +133,8 @@
             text-align: center;
             padding: 0 5%;
             position: relative;
-            /* **請更換此處的圖片！** 使用你伺服器的生存模式截圖，讓網站更有真實感。 */
             background: linear-gradient(to bottom, rgba(15, 16, 20, 0.3), var(--bg-dark)), 
+                        /* **請更換此處的圖片！** 使用你伺服器的生存模式截圖，讓網站更有真實感。 */
                         url('https://images.unsplash.com/photo-1587573089734-09cb69c0f2b4?q=80&w=2070&auto=format&fit=crop') no-repeat center center/cover;
         }
 
@@ -166,6 +167,7 @@
             backdrop-filter: blur(10px);
             transition: 0.3s;
             cursor: pointer;
+            margin-bottom: 20px; /* IP 地址與 Discord 按鈕間的間距 */
         }
 
         .server-ip-box:hover {
@@ -185,6 +187,31 @@
             color: var(--text-dim);
             text-transform: uppercase;
             letter-spacing: 1px;
+        }
+
+        /* **主視覺區的 Discord 大按鈕樣式** */
+        .discord-large-btn {
+            padding: 1rem 3rem;
+            background: var(--accent-color);
+            border: 2px solid var(--accent-color);
+            border-radius: 50px;
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            transition: 0.3s;
+            box-shadow: 0 10px 30px rgba(114, 137, 218, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .discord-large-btn:hover {
+            background: transparent;
+            color: var(--accent-color);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(114, 137, 218, 0.5);
         }
 
         /* 特色區塊 */
@@ -277,6 +304,10 @@
                 flex-direction: column;
                 gap: 5px;
             }
+            .discord-large-btn {
+                padding: 0.8rem 2rem;
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
@@ -304,9 +335,14 @@
         
         <div class="server-ip-box" onclick="copyIP()" id="ipBox">
             <div class="ip-icon"><i class="fas fa-gamepad"></i></div>
-            <div class="ip-text" id="ipText">PLAY.MCSERVER.TW</div>
+            <div class="ip-text" id="ipText">taiwanfrp.ddns.net:14432</div>
             <div class="copy-hint" id="copyHint"><i class="far fa-copy"></i> 點擊複製 IP</div>
         </div>
+
+        <a href="https://discord.gg/vz5ZDXnpKc" target="_blank" class="discord-large-btn">
+            <i class="fab fa-discord"></i> 立即加入我們的 Discord 社群
+        </a >
+
     </section>
 
     <section class="features">
@@ -315,17 +351,17 @@
             <div class="card">
                 <i class="fas fa-gem"></i>
                 <h3>原味核心體驗</h3>
-                <p>我們極力保持原版 Minecraft 的核心玩法。沒有影響平衡的指令，享受最原始的探索與挑戰。</p >
+                <p>我們極力保持原版 Minecraft 的核心玩法。沒有任何改變平衡的插件，享受最自由、最原始的探索與挑戰。</p >
             </div>
             <div class="card">
-                <i class="fas fa-users"></i>
-                <h3>社群共建家園</h3>
-                <p>在和諧的社群中建立屬於你的城市、進行跨越世界的貿易。真正的樂趣來自於共同創造與分享。</p >
+                <i class="fas fa-handshake"></i>
+                <h3>社群自治與信任</h3>
+                <p>伺服器的和諧建立在**玩家間的互相信任**。我們鼓勵自由，但保有管理員權力處理極端破壞行為，保障大部分人的體驗。</p >
             </div>
             <div class="card">
-                <i class="fas fa-lock"></i>
-                <h3>公平與安全</h3>
-                <p>雖然純淨，但我們有基礎的領地保護與反作弊機制，確保你的努力成果不會被惡意破壞。</p >
+                <i class="fas fa-infinity"></i>
+                <h3>長期穩定運行</h3>
+                <p>伺服器主機資源充足，提供 **24/7** 的穩定服務與定期備份，保證你的建築與進度能夠長期保存。</p >
             </div>
         </div>
     </section>
