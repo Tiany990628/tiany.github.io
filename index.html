@@ -52,7 +52,8 @@
             width: 100%;
             padding: 1.5rem 5%;
             display: flex;
-            justify-content: space-between;
+            /* 調整為靠左和靠右對齊 */
+            justify-content: space-between; 
             align-items: center;
             background: rgba(15, 16, 20, 0.8);
             backdrop-filter: blur(10px);
@@ -74,37 +75,10 @@
             color: var(--primary-color);
         }
 
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--text-dim);
-            text-decoration: none;
-            font-weight: 600;
-            transition: 0.3s;
-            position: relative;
-        }
-
-        .nav-links a:hover {
-            color: var(--text-main);
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--primary-color);
-            transition: 0.3s;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
+        /* 移除 nav-links 的相關樣式，因為元素已被移除 */
+        .nav-placeholder {
+            /* 佔位符，用於保持 logo 和 cta-btn 能夠靠邊對齊 */
+            width: 0; 
         }
 
         /* 導航欄上的 CTA 按鈕 (Discord) */
@@ -134,7 +108,6 @@
             padding: 0 5%;
             position: relative;
             background: linear-gradient(to bottom, rgba(15, 16, 20, 0.3), var(--bg-dark)), 
-                        /* **請更換此處的圖片！** 使用你伺服器的生存模式截圖，讓網站更有真實感。 */
                         url('https://images.unsplash.com/photo-1587573089734-09cb69c0f2b4?q=80&w=2070&auto=format&fit=crop') no-repeat center center/cover;
         }
 
@@ -167,7 +140,7 @@
             backdrop-filter: blur(10px);
             transition: 0.3s;
             cursor: pointer;
-            margin-bottom: 20px; /* IP 地址與 Discord 按鈕間的間距 */
+            margin-bottom: 20px;
         }
 
         .server-ip-box:hover {
@@ -189,7 +162,7 @@
             letter-spacing: 1px;
         }
 
-        /* **主視覺區的 Discord 大按鈕樣式** */
+        /* 主視覺區的 Discord 大按鈕樣式 */
         .discord-large-btn {
             padding: 1rem 3rem;
             background: var(--accent-color);
@@ -294,9 +267,6 @@
 
         /* RWD 適配 */
         @media (max-width: 768px) {
-            .nav-links {
-                display: none; /* 簡單隱藏，實際開發可用漢堡選單 */
-            }
             .hero h1 {
                 font-size: 2.5rem;
             }
@@ -319,13 +289,8 @@
         <div class="logo">
             <i class="fas fa-cube"></i> MC Server<span>TW</span>
         </div>
-        <ul class="nav-links">
-            <li>首頁</li>
-            <li>關於純生存</li>
-            <li>社群規定</li>
-            <li>贊助/支持</li>
-        </ul>
-        
+        <div class="nav-placeholder"></div> 
+        <i class="fab fa-discord"></i> 加入 Discord
     </nav>
 
     <section class="hero">
@@ -367,11 +332,9 @@
     </section>
 
     <footer>
-        <p>&copy; 2024 Minecraft Server TW. Not affiliated with Mojang AB.</p >
+        <p>&copy; 2025 Minecraft Server TW. Not affiliated with Mojang AB.</p >
         <div style="margin-top: 10px; font-size: 1.5rem;">
             
-            <i class="fab fa-facebook" style="margin: 0 10px; cursor: pointer;"></i>
-            <i class="fab fa-youtube" style="margin: 0 10px; cursor: pointer;"></i>
         </div>
     </footer>
 
